@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "inter";
+}
+
+body {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "DIN-Bold";
+  src: url("./resources/fonts/din/DIN-Bold.ttf");
+}
+
+@font-face {
+  font-family: "DIN-Regular";
+  src: url("./resources/fonts/din/DIN-Regular.ttf");
+}
+//colors
+$main-color: #ffffff;
+
+//mixins
+@mixin heroicons($size) {
+  height: $size;
+  width: $size;
+  color: #888;
+}
+
+@mixin links($fontSize) {
+  font-size: $fontSize;
+  text-decoration: none;
+  display: inline-block;
+  color: $main-color;
+}
+
+@mixin info-styles {
+  p {
+    font-family: "DIN-Regular";
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    &:first-of-type {
+      padding-bottom: 0.6rem;
+    }
+  }
+
+  h2 {
+    font-family: "DIN-Bold";
+    padding-bottom: 2.8rem;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: -4.8rem;
+  }
+
+  button {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1rem 6.4rem;
+    background-color: inherit;
+    color: $main-color;
+    border: 2px solid $main-color;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 2.3rem;
+  }
+}
+
+.section-landing {
+  height: 100vh;
+  background-image: url("./resources/images/Marketing_LandingFeatured_Redesign.webp");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 6.4rem;
+  color: $main-color;
+  text-transform: uppercase;
+  padding-top: 2.8rem;
+
+  .right {
+    span {
+      display: block;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.3rem;
+      text-align: center;
+      margin-left: -8.2rem;
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    padding-bottom: 4.2rem;
+  }
+
+  .nav-link:link,
+  .nav-link:visited {
+    @include links(0.9rem);
+    margin: 0 1.2rem;
+    font-weight: 500;
+  }
+
+  .active:link {
+    margin-left: 0;
+    border-bottom: 1.6px solid $main-color;
+  }
+
+  .centre {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      padding-bottom: 1.7rem;
+      font-family: "DIN-Bold";
+    }
+
+    p {
+      text-transform: none;
+      font-family: "DIN-Regular";
+      font-weight: 100;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+  }
+
+  .landing-bottom {
+    width: 110%;
+    .landing-cta {
+      .cta-inner-box {
+        display: flex;
+        gap: 1.2rem;
+      }
+      input {
+        width: 70%;
+        display: inline-block;
+        background-color: rgba(184, 184, 184, 0.223);
+        border-radius: 0.24rem;
+        border: 2px solid #888;
+      }
+      button {
+        width: 30%;
+        display: inline-block;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        border: none;
+      }
+    }
+
+    .availability {
+      @include links(0.8rem);
+      font-weight: 500;
+      padding: 1.4rem 0;
+    }
+
+    .privacy {
+      font-size: 0.7rem;
+      color: #888;
+
+      a {
+        @include links(0.7rem);
+        text-decoration: underline;
+      }
+    }
+    .icon {
+      font-size: 1.8rem;
+    }
+    ::placeholder {
+      color: #b8b8b8;
+      padding-left: 1.2rem;
+    }
+  }
+}
+
+.section-info {
+  display: grid;
+  max-width: 100vw;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+
+  .image-box {
+    align-self: center;
+
+    .figure {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      object-fit: cover;
+      vertical-align: top;
+    }
+  }
+
+  .info-box {
+    background-color: #000;
+    color: $main-color;
+    padding: 14.6rem 10.6rem 0 6rem;
+    @include info-styles;
+  }
+}
+
+.herodown {
+  @include heroicons(3rem);
+}
+
+.heroright {
+  @include heroicons(1rem);
+  display: inline;
+  vertical-align: top;
+}

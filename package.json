@@ -1,0 +1,14 @@
+{
+  "name": "projectstarlink",
+  "version": "1.0.0",
+  "description": "StarlinkClone",
+  "main": "index.js",
+  "scripts": {
+    "sassCompile": "node-sass -w styles.scss main.css"
+  },
+  "author": "ProsperDeogratius",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
